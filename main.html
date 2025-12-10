@@ -10,20 +10,29 @@
 	<script>
 		function secondHighest(arr) {
 			//Write your code here
-			let i= Math.max(arr[0],arr[1]);
-			let j=Math.min(arr[0],arr[1]);
-			for(let i =2; i<arr.length; i++){
+			if(arr.length!==0 && arr.length!==1){
+				let i= Math.max(arr[0],arr[1]);
+			    let j=Math.min(arr[0],arr[1]);
+				for(let i =2; i<arr.length; i++){
 				if(arr[i]>i){
 					j=i;
 					i=arr[i];
 				}else if(arr[i]>j && i !==arr[i]){
 					j=arr[i];
 				}
-				if(arr.length==0 || arr.length==1 || i==j){
-					return "-Infinity";
-				}
+					
 			}
-			return j;
+			  if(i===j){
+						return "-Infinity"
+					}else{return j;}
+			
+			}
+			 
+			
+			if(arr.length===0 || arr.length===1){
+				return "-Infinity";
+			}
+			
 		}
 
 		function Main() {
